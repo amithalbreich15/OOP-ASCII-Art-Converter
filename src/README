@@ -1,0 +1,28 @@
+amithalbreich
+208917393
+
+About the Image interface default method that returns Images (Bonus):
+I added 2 new classes:
+SubImage Class: which implements the interface Image and represents a SubImage which is a small square
+piece of the original given image with the given SubImage size - each sub-image has indication of Column Index and Row
+Index of the current image that is updated in the SubImageIterable class.
+SubImageIterable Class: This iterator has 'next' that returns a new SubImage object that represents a square piece of
+size (subimageSize * subimageSize), the iterator progresses as we add subImageSize to
+row/col accordingly without exceeding the original's image size in each time we want to skip to the next
+SubImage object.
+Space Complexity of the division of the Image to smaller sub-images Algorithm:
+The space complexity of an algorithm that divides the Image of size M * N into square SubImages of size n*n is O(MN).
+This is because the algorithm needs to store the entire matrix (Color 2D Array) in memory in order to perform
+the division into SubImages. The size of the matrix is M * N, so the space complexity is O(MN).
+
+Time Complexity of the division of the Image to smaller sub-images Algorithm:
+Let us define:
+We use divide and conquer method to run over all subimages by order of rows first and than columns and get the correct
+SubImage in each iteration therefore the overall Time Complexity is O(log(MN)) where M is numberOfRows and N is number
+of columns.
+
+To shorten the runtime I used an HashMap data structure so when we run multiple times the render of the image Subimages
+will be saved in kind of a cache
+
+I chose to use a Hashset in the Shell class for the chars set. so that there are no duplicates,
+plus fast insertion and removal.
